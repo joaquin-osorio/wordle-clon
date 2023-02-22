@@ -50,7 +50,7 @@ const LetterDisplay = ({ type, letter }) => {
       bg={bgColor}
     >
       <Text fontSize="3xl" fontWeight="bold" color="#FFF">
-        {letter.toUpperCase()}
+        {letter ? letter.toUpperCase() : ''}
       </Text>
     </Flex>
   );
