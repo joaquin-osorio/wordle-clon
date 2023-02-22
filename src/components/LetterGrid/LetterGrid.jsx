@@ -10,6 +10,8 @@ const LetterGrid = () => {
   const indexRef = useRef(rowIndex);
   const arrRef = useRef(stringArr);
 
+  const correctWord='tarado'
+
   useEffect(() => {
     document.addEventListener("keydown", (e) => {
       if (isLetter(e.key)) {
@@ -46,18 +48,21 @@ const LetterGrid = () => {
     return /^[a-zA-Z]$/.test(str);
   };
 
-  console.log(stringArr);
-
   return (
     <Flex direction="column" gap="0.4em">
-      <LetterRow word={rowIndex === 0 ? string : stringArr[0]} />
-      <LetterRow word={rowIndex === 1 ? string : stringArr[1]} />
-      <LetterRow word={rowIndex === 2 ? string : stringArr[2]} />
-      <LetterRow word={rowIndex === 3 ? string : stringArr[3]} />
-      <LetterRow word={rowIndex === 4 ? string : stringArr[4]} />
-      <LetterRow word={rowIndex === 5 ? string : stringArr[5]} />
+      <LetterRow word={rowIndex === 0 ? string : stringArr[0]} correctWord={rowIndex <= 0 ? undefined : correctWord}/>
+      <LetterRow word={rowIndex === 1 ? string : stringArr[1]} correctWord={rowIndex <= 1 ? undefined : correctWord}/>
+      <LetterRow word={rowIndex === 2 ? string : stringArr[2]} correctWord={rowIndex <= 2 ? undefined : correctWord}/>
+      <LetterRow word={rowIndex === 3 ? string : stringArr[3]} correctWord={rowIndex <= 3 ? undefined : correctWord}/>
+      <LetterRow word={rowIndex === 4 ? string : stringArr[4]} correctWord={rowIndex <= 4 ? undefined : correctWord}/>
+      <LetterRow word={rowIndex === 5 ? string : stringArr[5]} correctWord={rowIndex <= 5 ? undefined : correctWord}/>
+
     </Flex>
   );
 };
 
 export default LetterGrid;
+
+//TODO: Add a conditional to check if the word is completed before moving to the next row
+//TODO: If it's not complete, add a little shake animation to the row
+//TODO: If all the words are completed, show a message and reset the game
