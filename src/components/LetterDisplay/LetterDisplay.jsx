@@ -1,43 +1,44 @@
-import React from "react";
-import { Flex, Text } from "@chakra-ui/react";
+import React from 'react'
+import { Flex, Text } from '@chakra-ui/react'
+import PropTypes from 'prop-types'
 
-//Types disponibles: input, neutral, wrong, right, misplaced
+// Types disponibles: input, neutral, wrong, right, misplaced
 
 const LetterDisplay = ({ type, letter }) => {
-  let bgColor = "none";
+  let bgColor = 'none'
   switch (type) {
-    case "input":
-      bgColor = "none";
-      break;
-    case "neutral":
-      bgColor = "none";
-      break;
-    case "wrong":
-      bgColor = "#3a3a3b";
-      break;
-    case "right":
-      bgColor = "#538d4e";
-      break;
-    case "misplaced":
-      bgColor = "#b59f3b";
-      break;
+    case 'input':
+      bgColor = 'none'
+      break
+    case 'neutral':
+      bgColor = 'none'
+      break
+    case 'wrong':
+      bgColor = '#3a3a3b'
+      break
+    case 'right':
+      bgColor = '#538d4e'
+      break
+    case 'misplaced':
+      bgColor = '#b59f3b'
+      break
     default:
-      bgColor = "none";
+      bgColor = 'none'
   }
 
-  let borderStyle = "none";
+  let borderStyle = 'none'
   switch (type) {
-    case "input":
-      borderStyle = "2px solid #3a3a3b";
-      break;
-    case "neutral":
-      borderStyle = "2px solid #3a3a3b";
-      break;
+    case 'input':
+      borderStyle = '2px solid #3a3a3b'
+      break
+    case 'neutral':
+      borderStyle = '2px solid #3a3a3b'
+      break
     case undefined:
-      borderStyle = "2px solid #3a3a3b";
-      break;
+      borderStyle = '2px solid #3a3a3b'
+      break
     default:
-      borderStyle = "none";
+      borderStyle = 'none'
   }
 
   return (
@@ -53,7 +54,12 @@ const LetterDisplay = ({ type, letter }) => {
         {letter ? letter.toUpperCase() : ''}
       </Text>
     </Flex>
-  );
-};
+  )
+}
 
-export default LetterDisplay;
+LetterDisplay.propTypes = {
+  type: PropTypes.string,
+  letter: PropTypes.string
+}
+
+export default LetterDisplay
