@@ -28,7 +28,7 @@ const LetterRow = ({ word, correctWord }) => {
             <LetterDisplay letter={word[2]} type={evaluateType(word, correctWord, 2)}/>
             <LetterDisplay letter={word[3]} type={evaluateType(word, correctWord, 3)}/>
             <LetterDisplay letter={word[4]} type={evaluateType(word, correctWord, 4)}/>
-            <LetterDisplay letter={word[5]} type={evaluateType(word, correctWord, 5)}/>/
+            <LetterDisplay letter={word[5]} type={evaluateType(word, correctWord, 5)}/>
         </Flex >
   )
 }
